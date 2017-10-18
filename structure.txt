@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+<title>Webpack App</title>
+
+
+<link href=/static/css/app.e4129d746373b5599f8be7f66090c5db.css rel=stylesheet>
+</head><body><div id=app-box></div><script>// console.log('sb')</script>
+
+<script type=text/javascript src=/static/js/manifest.ab8ebd17855cc6957f3d.js>
+
+</script><script type=text/javascript src=/static/js/vendor.3991c921f3b572276156.js>
+
+</script><script type=text/javascript src=/static/js/app.a9e49221a8662d37f7ba.js>
+
+
+</script></body></html>
+
+
+
+前面2个js 是 webpack.optimize.CommonsChunkPlugin 的name 通过合成生成的。
+而最后一个是通过entry 的名字生成的
+
+css 也是entry 的名字生层的 所以也是app.css 配置文件写明白了
+
+标题 可以生成
