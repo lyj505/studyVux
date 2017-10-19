@@ -132,3 +132,10 @@ If you took the route of using webpack-dev-middleware instead of webpack-dev-ser
 
 
 ////所以关于vux的应该提取出来
+
+///对于第三方的尽量还是不要通过改动源码
+因为这样的话,就像上面所说的,更新了源库,你的代码就没法和modules里面的同步,这样的话造成手动的操作。
+
+所以关于第三方的我们都引入,不使用相对路径或者绝对路径。
+对于自己添加的模块,需要根据路径去引入。
+通过import的方式,比较清楚明了。
