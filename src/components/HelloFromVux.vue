@@ -6,7 +6,7 @@
       <h1> </h1>
       <img class="logo" src="../resource/外卖01_商品页.jpg">
     </div>
-    <group title="cell demo">
+    <group title="cell demo " class="fromh1111111111111111111">
       <cell title="Vux" value="Cool" is-link></cell>
     </group>
   </div>
@@ -19,7 +19,7 @@ export default {
   components: {
     Group,
     Cell,
-    XHeader 
+    XHeader
   },
   data () {
     return {
@@ -34,7 +34,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.fromh1111111111111111111{
+background-color: red;
+}
 .vux-demo {
   text-align: center;
 }

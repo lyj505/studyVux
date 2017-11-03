@@ -55,7 +55,7 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(options.filter || context, options))
 })
 
-// handle fallback for HTML5 history API
+// handle fallback for HTML5 history API ///启动的时候使用了node 服务器.....所以不会出问题了。。。
 app.use(require('connect-history-api-fallback')())
 
 // serve webpack bundle output

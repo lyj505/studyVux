@@ -1,7 +1,8 @@
 <template>
   <div id="app" style="height:100%;">
+    <loading v-model="isLoading"></loading>
+
     <view-box ref="viewBox" 
-   
     body-padding-top="46px" body-padding-bottom="55px">
     <!--body padding top 没用上-->
       <!--header-->
@@ -44,13 +45,13 @@
 </template>
 
 <script>
-import { XHeader, Tabbar, TabbarItem, ViewBox } from 'vux'
+import { XHeader, Tabbar, TabbarItem, ViewBox,Loading  } from 'vux'
 import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'app',
   components: {
-    XHeader, Tabbar, TabbarItem, ViewBox
+    XHeader, Tabbar, TabbarItem, ViewBox,Loading
   },
   data() {
     return {
@@ -90,12 +91,14 @@ export default {
   computed: {
     ...mapState({
       route: (state) => state.route,//在这里引用state.route 必须要在main.js使用sync异步
-      path: (state) => state.route.path, //vuex取得并使用 
+      path: (state) => state.route.path, //vuex取得并使用
+      isLoading: state => state.vux.isLoading 
     })
   },
   mounted() {
+    this.g.ceshi();
     // console.log(this.route);
-    console.log(this.$route);
+    console.log("route",this.$route);
   }
   // computed: {
   //   ...mapState({
@@ -148,9 +151,15 @@ export default {
 </script>
 
 <style lang="less">
-@import '~vux/src/styles/reset.less'; //引入的方法问题
-@import '~vux/src/styles/1px.less';
-@import '~vux/src/styles/tap.less';
+@import '~vux/src/styles/reset.less'; //引入的方法问题,其实是没问题的,官方的包就按官方的更新,
+@import '~vux/src/styles/1px.less';////自己的包自己引入就好了,所以从modules 里面的内容没有必要去变化
+@import '~vux/src/styles/tap.less'; //关于主题的东西 再看吧
+@import url('./assets/css/reset-user.less');
+
+//上面是微信的ui reset 改了个名字封装在里面
+//封装less文件 公用类
+
+
 .vux-header .vux-header-left a.fcfff {
   color: #000;
 }

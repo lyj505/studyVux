@@ -11,7 +11,7 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-let webpackConfig = {
+let webpackConfig = { 
   entry: {
     app: './src/main.js' //是基于project 目录的
   },
@@ -62,9 +62,12 @@ let webpackConfig = {
 }
 
 
-module.exports = vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
-})
+const  vuxConfig = require('./vux-config-use');
+// module.exports = vuxLoader.merge(webpackConfig, {
+//   plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
+// })
+module.exports = vuxLoader.merge(webpackConfig, vuxConfig)
 //duplicate-style 去掉重复的css
 
-//vux-loader保证了组件按需使用，因此不用担心最终打包了整个vux的组件库代码。
+
+//vux-loader保证了组件按需使用，因此不用担心最终打包了整个vux组件库代码。

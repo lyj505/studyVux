@@ -19,6 +19,8 @@ export default [
     name: 'merchantDetail',
     path: '/merchantDetail',
     component: merchantDetail
-  }
+  },
+  { path: '*', 
+  component: Index }
 ]
 

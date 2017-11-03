@@ -11,7 +11,7 @@
         <div class="detail-theme-header">
             <flexbox :gutter="0">
                 <flexbox-item>
-                    <div class="flex-demo">图片</div>
+                    <div class="flex-demo ">图片</div>
                     <button v-on:click="testVif">testVif</button>
                 </flexbox-item>
                 <flexbox-item>

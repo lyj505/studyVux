@@ -139,3 +139,8 @@ If you took the route of using webpack-dev-middleware instead of webpack-dev-ser
 所以关于第三方的我们都引入,不使用相对路径或者绝对路径。
 对于自己添加的模块,需要根据路径去引入。
 通过import的方式,比较清楚明了。
+关于import返回的东西:
+1.普通的vue 通过export default 会返回一个对象,例如 import sb from "./xxx",这样就会得到一个对象。名字可以换 只是一个别名这种形式。
+2.webpack在 loader里面加载了 loader: 'babel-loader',相当于编译成es5.浏览器阅读。
+3.postcss 结合less生成的工作流,最后使用了autoprefixer插件,兼容性良好,相当于不需要去考虑兼容性问题,配置好了,可以自动处理。
+
